@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AgriLink</title>
+    <style>
+      /* --- Shared Styles (Copied from index.html for internal consistency) --- */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f7f7f7; }
+      .container { width: 85%; max-width: 1200px; margin: 0 auto; }
+      header { background-color: #4CAF50; color: white; padding: 10px 0; }
+      .nav-content { display: flex; justify-content: space-between; align-items: center; }
+      .logo a { color: white; text-decoration: none; font-size: 1.5em; font-weight: 700; display: flex; align-items: center; }
+      .logo i { margin-right: 8px; font-size: 1.2em; }
+      nav ul { list-style: none; display: flex; }
+      nav ul li { margin-left: 20px; }
+      nav ul li a { color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s, transform 0.2s; display: block; }
+      nav ul li a:hover { background-color: rgba(255, 255, 255, 0.2); }
+      nav ul li a.active { background-color: #388E3C; font-weight: 700; }
+      #register-btn { border: 1px solid white; background-color: #E91E63; font-weight: 700; }
+      #register-btn:hover { background-color: #C2185B; }
+      footer { background-color: #333; color: white; padding: 25px 0; margin-top: 20px; text-align: center; }
+      .footer-links a { color: #ccc; text-decoration: none; margin: 0 15px; font-size: 0.9em; transition: color 0.3s; }
+      .footer-links a:hover { color: #4CAF50; }
+      .footer-links .social-icon { margin-left: 20px; font-size: 1.5em; }
+
+      /* --- About Us Page Specific Styles --- */
+      .about-section {
+          padding: 60px 0;
+          text-align: center;
+      }
+      
+      .about-section h1 {
+          font-size: 2.5em;
+          color: #333;
+          margin-bottom: 20px;
+          border-bottom: 3px solid #4CAF50;
+          display: inline-block;
+          padding-bottom: 5px;
+      }
+      
+      .mission-vision {
+          display: flex;
+          gap: 30px;
+          margin-top: 40px;
+          text-align: left;
+      }
+      
+      .mission, .vision {
+          flex: 1;
+          padding: 30px;
+          background-color: white;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .mission h2, .vision h2 {
+          color: #E91E63;
+          margin-bottom: 15px;
+          font-size: 1.8em;
+      }
+      
+      .mission i, .vision i {
+          margin-right: 10px;
+          color: #4CAF50;
+      }
+      
+      .team-section {
+          padding: 60px 0;
+          text-align: center;
+          background-color: white;
+          margin-top: 30px;
+      }
+      
+      .team-section h2 {
+          font-size: 2em;
+          color: #333;
+          margin-bottom: 40px;
+      }
+      
+      .team-grid {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+      }
+      
+      .team-member {
+          max-width: 250px;
+          text-align: center;
+      }
+      
+      .team-member img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 4px solid #4CAF50;
+          margin-bottom: 15px;
+      }
+      
+      .team-member h4 {
+          margin-bottom: 5px;
+          color: #333;
+      }
+      
+      .team-member p {
+          color: #666;
+          font-style: italic;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html">AgriLink</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a id="register-btn" href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <h1>Our Story: Connecting Farms to Families</h1>
+            <p>AgriLink was founded on the simple idea that food should be fresh, local, and accessible. We bridge the gap between hardworking farmers and conscious consumers, fostering a sustainable ecosystem for everyone.</p>
+
+            <div class="mission-vision">
+                <div class="mission">
+                    <h2><i class="fas fa-bullseye"></i>Our Mission</h2>
+                    <p>To empower local farmers by providing a direct, transparent, and profitable marketplace for their products, and to provide consumers with the freshest, highest-quality produce available.</p>
+                </div>
+                <div class="vision">
+                    <h2><i class="fas fa-eye"></i>Our Vision</h2>
+                    <p>To become the leading farm-to-table platform, setting the standard for sustainable food sourcing, community support, and technological innovation in the agricultural sector.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet the AgriLink Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="ceo.jpg" alt="CEO">
+                    <h4>Juan Dela Cruz</h4>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="cmo.jpg" alt="CMO">
+                    <h4>Jessica Vipinoso</h4>
+                    <p>Head of Farmer Relations</p>
+                </div>
+                <div class="team-member">
+                    <img src="cto.png" alt="CTO">
+                    <h4>Jose Reyes</h4>
+                    <p>Chief Technology Officer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-links">
+            <p>© 2025 AgriLink. All rights reserved.</p>
+            <a href="about.html">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="contact.html">Support</a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * ABOUT.HTML PAGE JAVASCRIPT
+         * Simple log for demonstration
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('About Us page loaded successfully.');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AgriLink</title>
+    <style>
+      /* --- Shared Styles (Copied from index.html) --- */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f7f7f7; }
+      .container { width: 85%; max-width: 1200px; margin: 0 auto; }
+      header { background-color: #4CAF50; color: white; padding: 10px 0; }
+      .nav-content { display: flex; justify-content: space-between; align-items: center; }
+      .logo a { color: white; text-decoration: none; font-size: 1.5em; font-weight: 700; display: flex; align-items: center; }
+      .logo i { margin-right: 8px; font-size: 1.2em; }
+      nav ul { list-style: none; display: flex; }
+      nav ul li { margin-left: 20px; }
+      nav ul li a { color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s, transform 0.2s; display: block; }
+      nav ul li a:hover { background-color: rgba(255, 255, 255, 0.2); }
+      nav ul li a.active { background-color: #388E3C; font-weight: 700; }
+      #register-btn { border: 1px solid white; background-color: #E91E63; font-weight: 700; }
+      #register-btn:hover { background-color: #C2185B; }
+      footer { background-color: #333; color: white; padding: 25px 0; margin-top: 20px; text-align: center; }
+      .footer-links a { color: #ccc; text-decoration: none; margin: 0 15px; font-size: 0.9em; transition: color 0.3s; }
+      .footer-links a:hover { color: #4CAF50; }
+      .footer-links .social-icon { margin-left: 20px; font-size: 1.5em; }
+
+      /* --- Contact Us Page Specific Styles --- */
+      .contact-section {
+          padding: 60px 0;
+      }
+      
+      .contact-section h1 {
+          text-align: center;
+          font-size: 2.5em;
+          color: #333;
+          margin-bottom: 40px;
+      }
+      
+      .contact-grid {
+          display: flex;
+          gap: 40px;
+          background-color: white;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .contact-form, .contact-info {
+          flex: 1;
+      }
+      
+      .contact-form h2 {
+          color: #E91E63;
+          margin-bottom: 20px;
+      }
+
+      .contact-form label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: 700;
+          color: #555;
+      }
+      
+      .contact-form input[type="text"],
+      .contact-form input[type="email"],
+      .contact-form textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 1em;
+          transition: border-color 0.3s;
+      }
+      
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+          border-color: #4CAF50;
+          outline: none;
+      }
+
+      .contact-form button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 25px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1.1em;
+          font-weight: 700;
+          transition: background-color 0.3s;
+      }
+      
+      .contact-form button:hover {
+          background-color: #388E3C;
+      }
+      
+      .contact-info {
+          padding: 20px;
+          background-color: #e8f5e9;
+          border-radius: 8px;
+      }
+      
+      .contact-info h2 {
+          color: #4CAF50;
+          margin-bottom: 20px;
+      }
+      
+      .info-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 25px;
+          font-size: 1.1em;
+      }
+      
+      .info-item i {
+          font-size: 1.5em;
+          color: #E91E63;
+          margin-right: 15px;
+          width: 30px;
+      }
+      
+      .info-item a {
+          color: #333;
+          text-decoration: none;
+      }
+      
+      .info-item p {
+          color: #333;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html">AgriLink</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                    <li><a id="register-btn" href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+            <h1>Get in Touch with AgriLink</h1>
+            <div class="contact-grid">
+                
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+
+                        <button type="submit">Submit Inquiry</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Our Contact Details</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>4425 Real St., Burabod, Lagonoy, Camarines Sur</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+63212345678">(02) 1234 5678</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:support@agrilink.ph">support@agrilink.ph</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-links">
+            <p>© 2025 AgriLink. All rights reserved.</p>
+            <a href="about.html">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="contact.html">Support</a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * CONTACT.HTML PAGE JAVASCRIPT
+         * Handles form submission and validation
+         */
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the default form submission
+
+            const form = event.target;
+            
+            // Simple check for required fields (HTML's 'required' attribute helps too)
+            if (form.checkValidity()) {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                // Simulate sending the data
+                console.log('--- Form Data ---');
+                console.log('Name:', name);
+                console.log('Email:', email);
+                console.log('Message:', message);
+                console.log('-----------------');
+
+                // User feedback
+                alert('Thank you for your message, ' + name + '! We will get back to you soon.');
+                
+                // Clear the form
+                form.reset();
+            } else {
+                alert('Please fill out all required fields.');
+            }
+        });
+    </script>
+</body>
+</html>

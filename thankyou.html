@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Complete! - AgriLink</title>
+    <style>
+      /* --- Shared Styles (Copied from index.html) --- */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f7f7f7; }
+      .container { width: 85%; max-width: 1200px; margin: 0 auto; }
+      header { background-color: #4CAF50; color: white; padding: 10px 0; }
+      .nav-content { display: flex; justify-content: space-between; align-items: center; }
+      .logo a { color: white; text-decoration: none; font-size: 1.5em; font-weight: 700; display: flex; align-items: center; }
+      .logo i { margin-right: 8px; font-size: 1.2em; }
+      nav ul { list-style: none; display: flex; }
+      nav ul li { margin-left: 20px; }
+      nav ul li a { color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s, transform 0.2s; display: block; }
+      nav ul li a:hover { background-color: rgba(255, 255, 255, 0.2); }
+      nav ul li a.active { background-color: #388E3C; font-weight: 700; }
+      #register-btn { border: 1px solid white; background-color: #E91E63; font-weight: 700; }
+      #register-btn:hover { background-color: #C2185B; }
+      footer { background-color: #333; color: white; padding: 25px 0; margin-top: 20px; text-align: center; }
+      .footer-links a { color: #ccc; text-decoration: none; margin: 0 15px; font-size: 0.9em; transition: color 0.3s; }
+      .footer-links a:hover { color: #4CAF50; }
+      .footer-links .social-icon { margin-left: 20px; font-size: 1.5em; }
+
+      /* --- Thank You Page Specific Styles --- */
+      .thankyou-section {
+          padding: 80px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 70vh;
+      }
+      
+      .thankyou-card {
+          width: 100%;
+          max-width: 600px;
+          background-color: white;
+          padding: 50px;
+          border-radius: 10px;
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          border-left: 8px solid #4CAF50;
+      }
+      
+      .thankyou-card i {
+          font-size: 4em;
+          color: #4CAF50;
+          margin-bottom: 20px;
+      }
+      
+      .thankyou-card h1 {
+          color: #E91E63;
+          font-size: 3em;
+          margin-bottom: 15px;
+      }
+      
+      .thankyou-card p {
+          font-size: 1.2em;
+          color: #555;
+          margin-bottom: 30px;
+      }
+      
+      .thankyou-card .home-btn {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 30px;
+          text-decoration: none;
+          border-radius: 50px;
+          font-weight: 700;
+          transition: background-color 0.3s;
+      }
+      
+      .thankyou-card .home-btn:hover {
+          background-color: #388E3C;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html">AgriLink</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a id="register-btn" href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="thankyou-section">
+        <div class="thankyou-card">
+            <i class="fas fa-check-circle"></i>
+            <h1 id="thankYouHeader">Registration Complete!</h1>
+            <p>Welcome to the AgriLink family. You are now connected to the freshest local produce. Start exploring our network of farmers!</p>
+            <a href="index.html" class="home-btn">Go to Homepage</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-links">
+            <p>© 2025 AgriLink. All rights reserved.</p>
+            <a href="about.html">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="contact.html">Support</a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * THANKYOU.HTML PAGE JAVASCRIPT
+         * Retrieves the user's name from localStorage and personalizes the message
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            const userName = localStorage.getItem('agrilink_user_name');
+            const headerElement = document.getElementById('thankYouHeader');
+            
+            if (userName) {
+                // Personalize the greeting
+                headerElement.textContent = Thank You, ${userName}! 🎉;
+                // Clear the name from localStorage after use (optional, but good for privacy)
+                // localStorage.removeItem('agrilink_user_name');
+            } else {
+                // Fallback message if the user navigated directly
+                headerElement.textContent = 'Registration Complete! 🎉';
+            }
+            
+            console.log('Thank You page loaded.');
+        });
+    </script>
+</body>
+</html>

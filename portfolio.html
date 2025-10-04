@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - AgriLink</title>
+    <style>
+      /* --- Shared Styles (Copied from index.html) --- */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f7f7f7; }
+      .container { width: 85%; max-width: 1200px; margin: 0 auto; }
+      header { background-color: #4CAF50; color: white; padding: 10px 0; }
+      .nav-content { display: flex; justify-content: space-between; align-items: center; }
+      .logo a { color: white; text-decoration: none; font-size: 1.5em; font-weight: 700; display: flex; align-items: center; }
+      .logo i { margin-right: 8px; font-size: 1.2em; }
+      nav ul { list-style: none; display: flex; }
+      nav ul li { margin-left: 20px; }
+      nav ul li a { color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s, transform 0.2s; display: block; }
+      nav ul li a:hover { background-color: rgba(255, 255, 255, 0.2); }
+      nav ul li a.active { background-color: #388E3C; font-weight: 700; }
+      #register-btn { border: 1px solid white; background-color: #E91E63; font-weight: 700; }
+      #register-btn:hover { background-color: #C2185B; }
+      footer { background-color: #333; color: white; padding: 25px 0; margin-top: 20px; text-align: center; }
+      .footer-links a { color: #ccc; text-decoration: none; margin: 0 15px; font-size: 0.9em; transition: color 0.3s; }
+      .footer-links a:hover { color: #4CAF50; }
+      .footer-links .social-icon { margin-left: 20px; font-size: 1.5em; }
+
+      /* --- Portfolio Page Specific Styles --- */
+      .portfolio-section {
+          padding: 60px 0;
+          text-align: center;
+      }
+      
+      .portfolio-section h1 {
+          font-size: 2.5em;
+          color: #333;
+          margin-bottom: 50px;
+      }
+      
+      .gallery-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+      }
+      
+      .gallery-item {
+          background-color: white;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          text-align: left;
+          transition: transform 0.3s;
+          cursor: pointer;
+      }
+      
+      .gallery-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+      
+      .gallery-item img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          display: block;
+          /* Placeholder background */
+          background-color: #ddd;
+      }
+      
+      .gallery-content {
+          padding: 20px;
+      }
+      
+      .gallery-content h3 {
+          color: #4CAF50;
+          margin-bottom: 5px;
+          font-size: 1.5em;
+      }
+      
+      .gallery-content p {
+          color: #666;
+          font-size: 0.9em;
+      }
+      
+      .gallery-content .tag {
+          display: inline-block;
+          margin-top: 10px;
+          padding: 5px 10px;
+          background-color: #E91E63;
+          color: white;
+          border-radius: 5px;
+          font-weight: 700;
+          font-size: 0.8em;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html">AgriLink</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a id="register-btn" href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="portfolio-section">
+        <div class="container">
+            <h1>Our Network of Sustainable Farms & Products</h1>
+            <div class="gallery-grid" id="portfolioGallery">
+                
+                <div class="gallery-item" onclick="showPortfolioDetail('Green Leaf Organics')">
+                    <img src="VEGGIES.jpg" alt="Green Leaf Organics Farm">
+                    <div class="gallery-content">
+                        <h3>Green Leaf Organics</h3>
+                        <p>Specializing in leafy greens, herbs, and root vegetables. A fully organic-certified farm.</p>
+                        <span class="tag">Certified Organic</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="showPortfolioDetail('Mangga King Farms')">
+                    <img src="mango.webp" alt="Mango Orchard">
+                    <div class="gallery-content">
+                        <h3>Mangga King Farms</h3>
+                        <p>Home to the sweetest Carabao Mangoes and other tropical fruits, grown with low-impact methods.</p>
+                        <span class="tag">Tropical Fruits</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="showPortfolioDetail('Coastal Aqua Culture')">
+                    <img src="fish.jpg" alt="Aqua Culture">
+                    <div class="gallery-content">
+                        <h3>Coastal Aqua Culture</h3>
+                        <p>Sustainable, freshwater and brackish water aquaculture for local Tilapia and Milkfish supply.</p>
+                        <span class="tag">Seafood & Fish</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showPortfolioDetail('The Honeycomb Apiary')">
+                    <img src="HONEY.jpg" alt="Apiary">
+                    <div class="gallery-content">
+                        <h3>The Honeycomb Apiary</h3>
+                        <p>Producers of raw, unprocessed honey and beeswax, contributing to local pollination efforts.</p>
+                        <span class="tag">Specialty Goods</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="showPortfolioDetail('Nipa Palm Leaves')">
+                    <img src="nipahut.webp" alt="Nipa Hut">
+                    <div class="gallery-content">
+                        <h3>Nipa Palm Leaves</h3>
+                        <p>Specializing in the sustainable harvesting of nipa palm leaves for traditional roofing and crafts.</p>
+                        <span class="tag">Nipa Palm</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="showPortfolioDetail('Golden Yolk Farms')">
+                    <img src="eggs.jpg" alt="Yolk Farms">
+                    <div class="gallery-content">
+                        <h3>Golden Yolk Farms</h3>
+                        <p>Pasture-raised, heritage-breed brown eggs. Hens are fed a certified non-GMO, soy-free diet and are moved to fresh pasture daily.</p>
+                        <span class="tag">Fresh Eggs</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-links">
+            <p>© 2025 AgriLink. All rights reserved.</p>
+            <a href="about.html">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="contact.html">Support</a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * PORTFOLIO.HTML PAGE JAVASCRIPT
+         * Simple function to simulate clicking on a portfolio item
+         */
+        function showPortfolioDetail(itemName) {
+            alert(You are viewing the portfolio for: ${itemName}. This would lead to a dedicated farm profile page.);
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Portfolio page loaded with gallery items.');
+        });
+    </script>
+</body>
+</html>
