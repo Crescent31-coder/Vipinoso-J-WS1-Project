@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AgriLink</title>
+    <style>
+      /* --- Shared Styles (Copied from portfolio.html) --- */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f7f7f7; }
+      .container { width: 85%; max-width: 1200px; margin: 0 auto; }
+      header { background-color: #4CAF50; color: white; padding: 10px 0; }
+      .nav-content { display: flex; justify-content: space-between; align-items: center; }
+      .logo a { color: white; text-decoration: none; font-size: 1.5em; font-weight: 700; display: flex; align-items: center; }
+      .logo i { margin-right: 8px; font-size: 1.2em; }
+      nav ul { list-style: none; display: flex; }
+      nav ul li { margin-left: 20px; }
+      nav ul li a { color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s, transform 0.2s; display: block; }
+      nav ul li a:hover { background-color: rgba(255, 255, 255, 0.2); }
+      nav ul li a.active { background-color: #388E3C; font-weight: 700; }
+      #register-btn { border: 1px solid white; background-color: #E91E63; font-weight: 700; }
+      #register-btn:hover { background-color: #C2185B; }
+      /* The login button will be visually distinct on the header, like the register one */
+      #login-btn { border: 1px solid white; background-color: #03A9F4; font-weight: 700; }
+      #login-btn:hover { background-color: #0288D1; }
+      footer { background-color: #333; color: white; padding: 25px 0; margin-top: 20px; text-align: center; }
+      .footer-links a { color: #ccc; text-decoration: none; margin: 0 15px; font-size: 0.9em; transition: color 0.3s; }
+      .footer-links a:hover { color: #4CAF50; }
+      .footer-links .social-icon { margin-left: 20px; font-size: 1.5em; }
+
+      /* --- Login Form Specific Styles --- */
+      .form-section {
+          padding: 60px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+      }
+
+      .login-box {
+          background-color: white;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+          width: 100%;
+          max-width: 400px;
+          text-align: center;
+      }
+
+      .login-box h1 {
+          font-size: 2em;
+          color: #4CAF50;
+          margin-bottom: 30px;
+      }
+
+      .form-group {
+          margin-bottom: 20px;
+          text-align: left;
+      }
+
+      .form-group label {
+          display: block;
+          margin-bottom: 8px;
+          font-weight: 700;
+          color: #333;
+      }
+
+      .form-group input {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 1em;
+          transition: border-color 0.3s, box-shadow 0.3s;
+      }
+
+      .form-group input:focus {
+          border-color: #4CAF50;
+          box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+          outline: none;
+      }
+
+      .login-btn {
+          width: 100%;
+          padding: 12px;
+          background-color:#C2185B ;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          font-size: 1.1em;
+          font-weight: 700;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          margin-top: 10px;
+      }
+
+      .login-btn:hover {
+          background-color: #388E3C;
+      }
+
+      .form-links {
+          margin-top: 20px;
+          font-size: 0.9em;
+      }
+
+      .form-links a {
+          color: #03A9F4;
+          text-decoration: none;
+          transition: color 0.3s;
+      }
+
+      .form-links a:hover {
+          color: #0288D1;
+      }
+
+      .form-links .separator {
+          margin: 0 10px;
+          color: #999;
+      }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html">AgriLink</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a id="register-btn" href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="form-section">
+        <div class="login-box">
+            <h1>Login to AgriLink</h1>
+            <form id="loginForm" action="/login-process" method="POST">
+                
+                <div class="form-group">
+                    <label for="username_email">Email or Username</label>
+                    <input type="text" id="username_email" name="username_email" placeholder="Enter your email or username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+
+            <div class="form-links">
+                <a href="forgot-password.html">Forgot Password?</a>
+                <span class="separator">|</span>
+                <span>Don't have an account? <a href="register.html">Register</a></span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-links">
+            <p>© 2025 AgriLink. All rights reserved.</p>
+            <a href="about.html">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="contact.html">Support</a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Get the form element by its ID
+        const loginForm = document.getElementById('loginForm');
+
+        // Add an event listener for the form submission
+        loginForm.addEventListener('submit', function(event) {
+            // 1. Prevent the default form submission (which would try to go to the action="/login-process")
+            event.preventDefault(); 
+            
+            // In a real application, you would send the form data to the server here 
+            // (e.g., using fetch() or XMLHttpRequest) and wait for a successful response.
+            // For this front-end only example, we'll simulate success and redirect immediately.
+
+            // 2. Redirect the user to the homepage (index.html)
+            // window.location.href changes the current page to the specified URL.
+            window.location.href = 'index.html';
+        });
+    </script>
+
+</body>
+</html>
